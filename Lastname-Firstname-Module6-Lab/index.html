@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Seminar Student Registration</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>IT Seminar Registration</h1>
+    <p class="intro">Fields marked <span aria-hidden="true" class="req">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+
+    <form id="registrationForm" novalidate>
+      <div class="field">
+        <label for="fullName">Full name <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="fullName" name="fullName" required autocomplete="name"
+               aria-invalid="false" aria-describedby="fullNameError">
+        <p id="fullNameError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="studentNumber">Student number <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="studentNumber" name="studentNumber" required placeholder="24-1234-123"
+               aria-invalid="false" aria-describedby="studentNumberError">
+        <p id="studentNumberError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address <span class="req" aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" required autocomplete="email"
+               aria-invalid="false" aria-describedby="emailError">
+        <p id="emailError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="mobileNumber">Mobile number <span class="req" aria-hidden="true">*</span></label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" required placeholder="09171234567"
+               autocomplete="tel" aria-invalid="false" aria-describedby="mobileNumberError">
+        <p id="mobileNumberError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="password">Password <span class="req" aria-hidden="true">*</span></label>
+        <input type="password" id="password" name="password" required autocomplete="new-password"
+               aria-invalid="false" aria-describedby="passwordError passwordFeedback">
+        <p id="passwordFeedback" class="feedback" aria-live="polite"></p>
+        <p id="passwordError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm password <span class="req" aria-hidden="true">*</span></label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password"
+               aria-invalid="false" aria-describedby="confirmPasswordError">
+        <p id="confirmPasswordError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="course">Course <span class="req" aria-hidden="true">*</span></label>
+        <select id="course" name="course" required aria-invalid="false" aria-describedby="courseError">
+          <option value="" selected>Select your course</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BSCS">BSCS</option>
+        </select>
+        <p id="courseError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field checkbox-field">
+        <input type="checkbox" id="terms" name="terms" required aria-invalid="false" aria-describedby="termsError">
+        <label for="terms">I agree to the seminar terms and conditions <span class="req" aria-hidden="true">*</span></label>
+        <p id="termsError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="registerBtn">Register</button>
+        <button type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <p id="successMessage" class="success" role="status" hidden></p>
+
+    <section id="registrationSummary" class="summary" aria-labelledby="summaryHeading" hidden>
+      <h2 id="summaryHeading">Registration Summary</h2>
+      <dl>
+        <dt>Full name</dt>      <dd id="summaryName"></dd>
+        <dt>Student number</dt> <dd id="summaryStudentNumber"></dd>
+        <dt>Email address</dt>  <dd id="summaryEmail"></dd>
+        <dt>Mobile number</dt>  <dd id="summaryMobileNumber"></dd>
+        <dt>Course</dt>         <dd id="summaryCourse"></dd>
+      </dl>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
